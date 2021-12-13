@@ -1,0 +1,14 @@
+<div class="row">
+  <form class="search-form">
+    <mat-form-field class="deal-search" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Search a deal">
+    </mat-form-field>
+  </form>
+</div>
+
+<div>
+  <ul *ngFor="let deal of deals" class="list-group" style="display: inline-block;">
+    <app-game-card [deal]="deal"></app-game-card>
+  </ul>
+</div>
