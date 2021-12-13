@@ -1,0 +1,40 @@
+<div class="search-header">
+  <span class="deals-title">Deals list</span>
+  <form class="search-form">
+    <mat-form-field class="deal-search">
+      <mat-label>Search deal</mat-label>
+      <input #searchBox
+       matInput 
+       placeholder="Search a deal"
+       (input)="searchGame(searchBox.value)">
+    </mat-form-field>
+  </form>
+</div>
+
+
+<table mat-table [dataSource]="deals$" class="mat-elevation-z8 deals-table">
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef>Image</th>
+    <td mat-cell *matCellDef="let deal">
+      <img class="game-image" src="{{deal.thumb}}" alt="Game thumbnail">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let deal">{{ deal.internalName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="sale_price">
+    <th mat-header-cell *matHeaderCellDef>Sale Price</th>
+    <td mat-cell *matCellDef="let deal">{{ deal.salePrice }} $</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let deal">{{ deal.normalPrice }} $</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table> 

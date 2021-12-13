@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { DealsTableComponent } from './deals-table/deals-table.component';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
@@ -16,14 +18,15 @@ import {MatDividerModule} from '@angular/material/divider';
 import { HeaderComponent } from './header/header.component';
 import { MatInputModule  } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { GameCardComponent } from './game-card/game-card.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
-    GameCardComponent
+    DealsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { GameCardComponent } from './game-card/game-card.component';
     MatToolbarModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

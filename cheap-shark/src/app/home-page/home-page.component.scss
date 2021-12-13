@@ -1,13 +1,4 @@
-.search-form {
-    min-width: 150px;
-    max-width: 500px;
-    height: 200px;
-    width: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-    
-    .deal-search {
-        width: 100%;
-    }
+.deals-list {
+    display: inline-block;
+    justify-content: space-between;
 }

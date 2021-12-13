@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, throwError, of } from 'rxjs';
 
 import { Deal } from '../../interfaces/deal-interface';
 
@@ -12,7 +12,8 @@ const options = {
     'x-rapidapi-key': '4e7ec78a7bmsh0dfda4247254bd2p1f492cjsn971adfd5404e'
   },
   params: {
-    pageSize: '10'
+    pageSize: '10',
+    title: ""
   }
 }
 
@@ -23,7 +24,12 @@ export class DealsService {
   constructor(private httpClient: HttpClient) { }
   
 
-  getDeals() : Observable<Deal[]> {
+  getDeals(gameName: string) : Observable<Deal[]> {
+    console.log("Game name: " + gameName);
+    if(gameName.trim())
+    {
+      options.params.title = gameName;
+    }
     return this.httpClient.get<Deal[]>(apiUrl, options)
     .pipe(
       catchError(this.handleError)

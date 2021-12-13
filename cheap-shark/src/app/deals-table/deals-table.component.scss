@@ -1,0 +1,53 @@
+.game-image {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+.mat-column-name {
+    padding-left: 16px;
+    font-size: 20px;
+}
+
+.mat-column-sale_price {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+.mat-column-price {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+.deals-table {
+    width: 100%;
+    margin: 20px;
+}
+
+.search-header {
+    display: flex;
+    flex-direction: row;
+    
+    .deals-title {
+        position: relative;
+        font-size: 2rem;
+        padding: 30px;
+        margin-top: auto;
+    }
+    
+    .search-form {
+        min-width: 200px;
+        max-width: 500px;
+        height: 100px;
+    
+        padding: 30px;
+        margin-left: auto;
+    
+        .deal-search {
+            width: 100%;
+        }
+    }
+}
+
